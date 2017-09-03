@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Aluno } from './aluno';
+import { AlunoService } from './aluno.service';
 
 @Component({
   selector: 'app-root',
@@ -9,13 +11,12 @@ import { FormsModule } from '@angular/forms';
   imports: [FormsModule]           // importa ngModel
 })
 export class AppComponent {
-  aluno: Aluno = {nome: '', cpf: '', email: '', github: ''};
 
-}
+   aluno: Aluno = {nome: "", cpf: "", email: ""};
+   alunoService = new AlunoService();
 
-export class Aluno {
-  nome: string = '';
-  cpf: string = '';
-  email: string = '';
-  github: string = '';
+   gravar(a: Aluno): void {
+     this.alunoService.gravar(a);
+     this.aluno = {nome: "", cpf: "", email: ""};
+  }
 }
