@@ -8,7 +8,8 @@ import { CommonModule } from '@angular/common';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   standalone: true,
-  imports: [FormsModule, CommonModule]           // importa ngModel
+  imports: [FormsModule, CommonModule],
+  providers: [AlunoService]  // aqui, registra o serviço para injeção
 })
 export class AppComponent {
    constructor(private alunoService: AlunoService) {}
