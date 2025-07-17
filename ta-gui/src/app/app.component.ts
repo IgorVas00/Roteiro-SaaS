@@ -2,13 +2,13 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Aluno } from './aluno';
 import { AlunoService } from './aluno.service';
-
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   // styleUrls: ['./app.component.css'],
   standalone: true,
-  imports: [FormsModule]           // importa ngModel
+  imports: [FormsModule, CommonModule]           // importa ngModel
 })
 export class AppComponent {
 
