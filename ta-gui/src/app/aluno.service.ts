@@ -3,8 +3,8 @@ import { Aluno } from './aluno';
 export class AlunoService {
   alunos: Aluno[] = [];
   
-  gravar(aluno: Aluno): Aluno {
-    var result = null;
+  gravar(aluno: Aluno): Aluno | null {
+    let result: Aluno | null = null; 
     if (this.cpfNaoCadastrado(aluno.cpf)) {
       this.alunos.push(aluno);
       result = aluno;
@@ -16,5 +16,5 @@ export class AlunoService {
   }
 }
 
-  }
+  
 
